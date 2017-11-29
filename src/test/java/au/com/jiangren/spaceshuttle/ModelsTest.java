@@ -14,7 +14,7 @@ public class ModelsTest {
         Course course = new Course("JEE fullstack", "JEE fullstack course for Melbourne");
         String name = (String) ReflectionTestUtils.getField(course, "name");
         name = "JavaScript";
-//Immutable
+        //Immutable
         String userFriendlyDescription = "Course name is " + course.getName() + ", description is " + course.getDescription();
         String temp = userFriendlyDescription;
         userFriendlyDescription = "new one";
