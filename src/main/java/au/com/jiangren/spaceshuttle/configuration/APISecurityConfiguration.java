@@ -1,4 +1,4 @@
-package spaceshuttle.configuration;
+package au.com.jiangren.spaceshuttle.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

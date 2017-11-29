@@ -1,4 +1,4 @@
-package spaceshuttle.model;
+package au.com.jiangren.spaceshuttle.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;

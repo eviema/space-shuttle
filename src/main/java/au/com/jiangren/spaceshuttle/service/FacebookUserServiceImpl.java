@@ -1,12 +1,13 @@
-package spaceshuttle.service;
+package au.com.jiangren.spaceshuttle.service;
 
+import au.com.jiangren.spaceshuttle.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import spaceshuttle.model.User;
-import spaceshuttle.repository.RoleRepository;
-import spaceshuttle.repository.UserRepository;
+import au.com.jiangren.spaceshuttle.model.User;
+import au.com.jiangren.spaceshuttle.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +19,7 @@ public class FacebookUserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+    @Qualifier("roleRepository")
     @Autowired
     private RoleRepository roleRepository;
     @Autowired

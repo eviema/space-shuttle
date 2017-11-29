@@ -1,4 +1,4 @@
-package spaceshuttle.model;
+package au.com.jiangren.spaceshuttle.model;
 
 import org.springframework.data.annotation.Id;
 

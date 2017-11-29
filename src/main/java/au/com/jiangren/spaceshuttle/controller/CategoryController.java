@@ -1,4 +1,4 @@
-package spaceshuttle.controller;
+package au.com.jiangren.spaceshuttle.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,8 +1,8 @@
-package spaceshuttle.repository;
+package au.com.jiangren.spaceshuttle.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import spaceshuttle.model.Role;
+import au.com.jiangren.spaceshuttle.model.Role;
 
 
 @Repository("roleRepository")

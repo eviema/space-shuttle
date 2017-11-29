@@ -1,4 +1,4 @@
-package spaceshuttle.controller;
+package au.com.jiangren.spaceshuttle.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import spaceshuttle.model.Course;
-import spaceshuttle.repository.CourseRepository;
+import au.com.jiangren.spaceshuttle.model.Course;
+import au.com.jiangren.spaceshuttle.repository.CourseRepository;
 
 import java.util.Collection;
 import java.util.Collections;

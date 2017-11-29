@@ -1,7 +1,7 @@
-package spaceshuttle.repository;
+package au.com.jiangren.spaceshuttle.repository;
 
+import au.com.jiangren.spaceshuttle.model.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import spaceshuttle.model.Customer;
 
 import java.util.List;
 

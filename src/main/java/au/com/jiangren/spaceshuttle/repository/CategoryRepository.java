@@ -1,7 +1,7 @@
-package spaceshuttle.repository;
+package au.com.jiangren.spaceshuttle.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import spaceshuttle.model.Category;
+import au.com.jiangren.spaceshuttle.model.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 }

@@ -1,15 +1,16 @@
-package spaceshuttle.service;
+package au.com.jiangren.spaceshuttle.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import spaceshuttle.model.Role;
-import spaceshuttle.model.User;
-import spaceshuttle.repository.RoleRepository;
-import spaceshuttle.repository.UserRepository;
+import au.com.jiangren.spaceshuttle.model.Role;
+import au.com.jiangren.spaceshuttle.model.User;
+import au.com.jiangren.spaceshuttle.repository.RoleRepository;
+import au.com.jiangren.spaceshuttle.repository.UserRepository;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -23,6 +24,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+    @Qualifier("roleRepository")
     @Autowired
     private RoleRepository roleRepository;
     @Autowired

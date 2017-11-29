@@ -1,4 +1,4 @@
-package spaceshuttle.ui;
+package au.com.jiangren.spaceshuttle.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,8 +12,8 @@ import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
-import spaceshuttle.model.Customer;
-import spaceshuttle.repository.CustomerRepository;
+import au.com.jiangren.spaceshuttle.model.Customer;
+import au.com.jiangren.spaceshuttle.repository.CustomerRepository;
 
 /**
  * A simple example to introduce building forms. As your real application is probably much

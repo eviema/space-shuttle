@@ -1,20 +1,15 @@
-package spaceshuttle.ui;
+package au.com.jiangren.spaceshuttle.ui;
 
+import au.com.jiangren.spaceshuttle.model.Customer;
+import au.com.jiangren.spaceshuttle.repository.CustomerRepository;
 import com.vaadin.annotations.Theme;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.shared.ui.ValueChangeMode;
 import com.vaadin.spring.annotation.SpringUI;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Grid;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.TextField;
-import com.vaadin.ui.UI;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
-import spaceshuttle.model.Customer;
-import spaceshuttle.repository.CustomerRepository;
 
 @SpringUI(path = "/vaadin")
 @Theme("valo")

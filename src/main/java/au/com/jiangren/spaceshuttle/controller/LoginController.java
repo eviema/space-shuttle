@@ -1,4 +1,4 @@
-package spaceshuttle.controller;
+package au.com.jiangren.spaceshuttle.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -9,8 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import spaceshuttle.model.User;
-import spaceshuttle.service.UserService;
+import au.com.jiangren.spaceshuttle.model.User;
+import au.com.jiangren.spaceshuttle.service.UserService;
 
 import javax.validation.Valid;
 import java.util.Arrays;
