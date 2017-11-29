@@ -1,4 +1,5 @@
 # space-shuttle
 Spaceshuttle is an online course management system, using SpringBoot.
 
-![travis-build](https://img.shields.io/travis/eviema/space-shuttle.svg)
+[![Travis](https://img.shields.io/travis/eviema/space-shuttle.svg)](https://travis-ci.org/eviema/space-shuttle)
+[![Codecov](https://img.shields.io/codecov/c/github/eviema/space-shuttle.svg)]()

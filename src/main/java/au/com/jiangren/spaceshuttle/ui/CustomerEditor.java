@@ -27,7 +27,6 @@ import au.com.jiangren.spaceshuttle.repository.CustomerRepository;
 @SpringComponent
 @UIScope
 public class CustomerEditor extends VerticalLayout {
-
 	private final CustomerRepository repository;
 
 	/**
