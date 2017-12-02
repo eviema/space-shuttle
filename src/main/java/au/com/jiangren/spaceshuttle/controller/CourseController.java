@@ -1,13 +1,7 @@
 package au.com.jiangren.spaceshuttle.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import au.com.jiangren.spaceshuttle.model.Course;
 import au.com.jiangren.spaceshuttle.repository.CourseRepository;
 
@@ -23,7 +17,7 @@ public class CourseController {
     @Autowired
     private CourseRepository courseRepository;
 
-    @RequestMapping(value = "courses", method = RequestMethod.GET)
+    @GetMapping(value = "courses")
     public Set<Course> list() {
 
         /*
@@ -36,27 +30,27 @@ public class CourseController {
         return new HashSet<Course>(courseRepository.findAll());
     }
 
-    @RequestMapping(value = "courses", method = RequestMethod.POST)
+    @PostMapping(value = "courses")
     public Course create(@RequestBody Course course) {
         //return CourseMockData.createCourse(course);
         return courseRepository.save(course);
     }
 
-    @RequestMapping(value = "courses/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "courses/{id}")
     public Course get(@PathVariable Long id) {
         //return CourseMockData.getCourse(id);
 
         return courseRepository.findOne(id);
     }
 
-    @RequestMapping(value = "courses/{id}", method = RequestMethod.PUT)
+    @PutMapping(value = "courses/{id}")
     public Course update(@PathVariable Long id, @RequestBody Course course) {
         //return CourseMockData.updateCourse(id, course);
         course.setId(id);
         return courseRepository.save(course);
     }
 
-    @RequestMapping(value = "courses/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "courses/{id}")
     public Course delete(@PathVariable Long id) {
         // return CourseMockData.deleteCourse(id);
         Course course = courseRepository.findOne(id);
