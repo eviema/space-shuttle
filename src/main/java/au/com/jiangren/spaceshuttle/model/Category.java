@@ -1,12 +1,6 @@
 package au.com.jiangren.spaceshuttle.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -14,24 +8,24 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "category_name", nullable = false, length = 30)
     private String name;
-
+    @Column(name = "category_code", nullable = false, length = 20)
+    private String code;
+    @Column(name = "category_desc", nullable = false, length = 50)
     private String description;
-
     @ManyToMany(mappedBy = "categories", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Course> courses;
 
     public Category() {
     }
 
-    public Category(Long id, String name, String description, Set<Course> courses) {
-        this.id = id;
+    public Category(String name, String code, String description, Set<Course> courses) {
         this.name = name;
+        this.code = code;
         this.description = description;
         this.courses = courses;
     }
-
 
     public Long getId() {
         return id;
@@ -47,6 +41,14 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getDescription() {
