@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping(path = "/users") // This means URL's start with /user (after Application path)
+@RequestMapping(path = "/users")
 
 public class UserController {
 
@@ -62,7 +62,7 @@ public class UserController {
         return userService.findByExample(user);
     }
 
-    @PostMapping(path = "/user/example")
+    @GetMapping(path = "/user/example")
     public @ResponseBody
     List<User> getByExample(@RequestBody User user) {
         return userService.findByExample(user);
