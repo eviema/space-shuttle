@@ -146,11 +146,11 @@ public class User {
         this.active = active;
     }
 
-    public Set<Class> getClasses() {
+    public Set<Class> getClassSet() {
         return classes;
     }
 
-    public void setClasses(Set<Class> classes) {
-        this.classes = classes;
+    public void setClassSet(Set<Class> classSet) {
+        this.classes = classSet;
     }
 }

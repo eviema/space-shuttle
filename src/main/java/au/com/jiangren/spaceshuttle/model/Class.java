@@ -14,7 +14,7 @@ public class Class {
     private String code;
     @Column(name = "class_desc", nullable = false, length = 50)
     private String description;
-    @ManyToMany(mappedBy = "classes", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "classSet", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Student> students;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "course_id", referencedColumnName = "id")
