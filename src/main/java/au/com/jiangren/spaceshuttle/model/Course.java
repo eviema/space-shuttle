@@ -33,9 +33,12 @@ public class Course {
 
     }
 
-    public Course(String name, String description) {
+    public Course(String name, String code, String subtitle, String description, String location) {
         this.name = name;
+        this.code = code;
+        this.subtitle = subtitle;
         this.description = description;
+        this.location = location;
     }
 
     public Long getId() {
