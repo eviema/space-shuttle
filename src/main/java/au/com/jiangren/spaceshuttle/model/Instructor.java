@@ -13,6 +13,10 @@ import java.util.Set;
 public class Instructor extends User {
     @ManyToMany
     private Set<Course> courses;
+    @Column
+    private BigDecimal salary;
+    @Column
+    private BigDecimal bonus;
 
     public Set<Course> getCourses() {
         return courses;
@@ -21,12 +25,6 @@ public class Instructor extends User {
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
-
-    @Column
-    private BigDecimal salary;
-
-    @Column
-    private BigDecimal bonus;
 
     public BigDecimal getSalary() {
         return salary;
