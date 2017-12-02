@@ -12,8 +12,14 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue(value = "user")
-//@NamedQuery(name = "User.findAllUsers", query = "select u from User u")
+// @NamedQueries({@NamedQuery(name = User.FIND_ALL, query = "select u from User u"),
+//        @NamedQuery(name = User.FIND_BY_USERNAME, query = "select u from User u where u.username = :username")})
+
 public class User {
+
+    public static final String FIND_ALL = "User.findAll";
+    public static final String FIND_BY_USERNAME = "User.findByUsername";
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
@@ -31,11 +37,18 @@ public class User {
     @NotEmpty(message = "*Please provide your password")
     private String password;
     private String linkedInProfileUrl;
+    private String dob;
+    private String avatar;
     private String bio;
     private boolean active;
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
     private Set<Role> roles;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_class", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "class_id", referencedColumnName = "id"))
+    private Set<Class> classes;
 
     public Long getId() {
         return id;
@@ -85,6 +98,22 @@ public class User {
         this.linkedInProfileUrl = linkedInProfileUrl;
     }
 
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public String getBio() {
         return bio;
     }
@@ -115,5 +144,13 @@ public class User {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Set<Class> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Set<Class> classes) {
+        this.classes = classes;
     }
 }
