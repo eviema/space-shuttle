@@ -14,7 +14,6 @@ import javax.persistence.Table;
 public class Role implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "role_id")
     private int id;
     @Column(name = "role")
     private String role;
