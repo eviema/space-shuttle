@@ -33,6 +33,11 @@ public class Course {
 
     }
 
+    public Course(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public Course(String name, String code, String subtitle, String description, String location) {
         this.name = name;
         this.code = code;
