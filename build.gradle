@@ -7,6 +7,7 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('se.transmode.gradle:gradle-docker:1.2')
 	}
 }
 
@@ -82,6 +83,18 @@ tasks.withType(FindBugs) {
 		html.enabled = true
 	}
 }
+
+task buildDocker(type: Docker, dependsOn: build) {
+	applicationName = jar.baseName
+	dockerfile = file('Dockerfile')
+	doFirst {
+		copy {
+			from jar
+			into "${stageDir}/target"
+		}
+	}
+}
+
 pmd {
 	ignoreFailures = true
 	sourceSets = [sourceSets.main]
